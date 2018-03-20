@@ -48,3 +48,9 @@
     path: /etc/environment
     line: 'JAVA_HOME="{{ java_home_directory }}"'
   become: true
+
+
+- name: Set JAVA_HOME
+  set_fact:
+    JAVA_HOME: "{{ java_home_directory }}"
+  become: true
