@@ -1,4 +1,23 @@
 ---
-# tasks file for ansible-oracle-java8
-- include: debian.yml
-  when: ansible_os_family == "Debian"
+
+- name: INSTALL JRE REPO
+  become: yes
+  apt_repository:
+    repo: "ppa:webupd8team/java"
+
+- name: ACCEPT LICENSE
+  become: yes
+  debconf:
+    name: "oracle-java8-installer"
+    question: "shared/accepted-oracle-license-v1-1"
+    value: "true"
+    vtype: "select"
+
+- name: INSTALL JRE AND HAVEGED
+  become: yes
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+  with_items:
+    - haveged
+    - oracle-java8-installer
