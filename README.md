@@ -14,7 +14,7 @@ Role Variables
 ```
 ---
 # defaults file for ansible-oracle-java8
-oracle_java8_debian_repo_info:
+jdk8:
   id: 'EEA14886'
   keyserver: 'hkp://keyserver.ubuntu.com:80'
   repo: 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main'
@@ -34,7 +34,7 @@ Example Playbook
   become: true
   vars:
   roles:
-    - role: ansible-oracle-java8
+    - role: jdk8
   tasks:
 ```
 
