@@ -1,1 +1,6 @@
-localhost
+[nifi]
+10.116.104.72
+
+
+[all:vars]
+ansible_user=ubuntu

@@ -1,0 +1,5 @@
+- src: https://github.com/Magopancione/ansible_java8.git
+  name: jdk8
+  scm: git
+  version: v0.9.8
+  path: ./ansible_dependencies
