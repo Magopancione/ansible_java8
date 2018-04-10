@@ -1,6 +1,22 @@
-[nifi]
-10.116.104.72
-
+[Flink]
+flink-4 ansible_ssh_host=10.116.104.61
+flink-3 ansible_ssh_host=10.116.104.53
+flink-2 ansible_ssh_host=10.116.104.57
+flink-1 ansible_ssh_host=10.116.104.49
 
 [all:vars]
 ansible_user=ubuntu
+
+
+[xenials]  # Ubuntu 16.04 hosts without python2
+flink-4 ansible_ssh_host=10.116.104.61
+flink-3 ansible_ssh_host=10.116.104.53
+flink-2 ansible_ssh_host=10.116.104.57
+flink-1 ansible_ssh_host=10.116.104.49
+
+
+[xenials:vars] 
+ansible_user=ubuntu
+#ansible_python_interpreter=/usr/bin/python3
+http_proxy="http://10.221.0.22:8080"
+https_proxy="http://10.221.0.22:8080"
